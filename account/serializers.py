@@ -1,7 +1,6 @@
 from rest_framework import serializers,fields
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Status
 
 
 
@@ -18,6 +17,10 @@ class UserRegisterationSerializer(serializers.ModelSerializer):
             'username',
             "password",
         ]
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data)
+        return user
+
 class UserSerializerWithToken(UserRegisterationSerializer):
     token = serializers.SerializerMethodField(read_only=True,source="auth-token")
 

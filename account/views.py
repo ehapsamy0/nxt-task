@@ -1,7 +1,5 @@
 from rest_framework.decorators import api_view
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from django.contrib.auth import get_user_model
 from .serializers import UserRegisterationSerializer, UserSerializerWithToken
@@ -10,7 +8,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
-from rest_framework import status,generics
+from rest_framework import status,generics,permissions
 
 User = get_user_model()
 
@@ -34,6 +32,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 class UserRegistrationAPIView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserRegisterationSerializer
+    permission_classes = [permissions.AllowAny,]
 
     def post(self, request, *args, **kwargs):
         serializer = UserRegisterationSerializer(data=request.data)
