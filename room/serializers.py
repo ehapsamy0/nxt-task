@@ -5,4 +5,4 @@ from .models import Room
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
-        feilds = "__all__"
+        fields = ['id']

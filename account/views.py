@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from django.contrib.auth import get_user_model
-from .serializers import UserRegisterationSerializer, UserSerializerWithToken
+from .serializers import UserRegisterationSerializer, UserSerializer
 # Create your views here.
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -18,7 +18,7 @@ User = get_user_model()
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
-        serializer = UserSerializerWithToken(self.user).data
+        serializer = UserSerializer(self.user).data
         for k, v in serializer.items():
             data[k] = v
         return data
