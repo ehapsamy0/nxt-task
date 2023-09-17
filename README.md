@@ -8,3 +8,6 @@
     - 'run this command "docker-compose up"'
 
 
+
+### 1. Entity Relationship Diagram (ERD):
+![alt erd](https://github.com/ehapsamy0/nxt-task/blob/main/erd/digram.jpeg)

@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "6f78e0a5-54f8-46a0-a53b-17b0b95d79c0",
+		"name": "NXT TASK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12769256"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "ehapsamy",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789++",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}account/login/",
+							"host": [
+								"{{URL}}account"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "ehapsamy5",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789++",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}account/register/",
+							"host": [
+								"{{URL}}account"
+							],
+							"path": [
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "list rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}rooms/",
+							"host": [
+								"{{URL}}rooms"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservations",
+			"item": [
+				{
+					"name": "reservation list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}reservations/1/",
+							"host": [
+								"{{URL}}reservations"
+							],
+							"path": [
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reservation details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}reservations/1/",
+							"host": [
+								"{{URL}}reservations"
+							],
+							"path": [
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reservation change status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "cancel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}reservations/1/",
+							"host": [
+								"{{URL}}reservations"
+							],
+							"path": [
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create reservations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk3NTYxNjkzLCJpYXQiOjE2OTQ5Njk2OTMsImp0aSI6ImM3NDE0Mzk3ZWNiODRkZjU4OTU3OTQ4MjNkMGZjYmUwIiwidXNlcl9pZCI6MX0.YnTvybVDYP4de-464zRueQSehOmgNivmeUAPP_lIjY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "room",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-11-15",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-11-30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}reservations/",
+							"host": [
+								"{{URL}}reservations"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk3NTYxNzYyLCJpYXQiOjE2OTQ5Njk3NjIsImp0aSI6IjNkMmVkNTMzNjc1ZjRjNmViNzg1OWY4YWZlNjczYWU5IiwidXNlcl9pZCI6Mn0.LPtql3pj3u2ULiHhXBFm_7TpAebtVPFh15fw3T6uwK4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "127.0.0.1:8000/",
+			"type": "string"
+		}
+	]
+}

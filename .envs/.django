@@ -1,0 +1,18 @@
+SECRET_KEY="django-insecure-y^75gf4pbow18eckl*q^rvh&_d925g@i(fp4#8i)lx89(v$kng"
+DEBUG=1
+
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0,*
+# database
+
+POSTGRES_DB="nxtreserv"
+POSTGRES_USER="postgres"
+POSTGRES_PASSWORD="postgres"
+POSTGRES_HOST="pgdb"
+POSTGRES_PORT=5432
+DJANGO_SETTINGS_MODULE="core.settings"
+
+
+
+
+
+
